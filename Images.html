@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Images</title>
+    <link rel="stylesheet" href="images.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;600;700&display=swap" rel="stylesheet">
+    <script src="Index.js"></script>
+    </head>
+    
+<body>
+
+<!--------------NavBar and Background Image---------------->  
+
+<section class="header_images">
+    <nav>
+      <a href="Homepage.html"><img src="logo.png" alt=""></a>
+      <div class="nav-links">
+          <ul id="nav">
+            <li><a class="nav-item" href="Homepage.html">Home</a></li>
+            <li><a class="nav-item" href="PresentationPage.html">Presentation Page</a></li>
+            <li><a class="nav-item" href="">Query Form</a></li>
+            <li><a class="nav-item" href="ProductPage.html">Products</a></li>
+            <li><a class="nav-item active" href="Images.html">Thumbnail Images</a></li>
+            <li><a class="nav-item" href="svg.html">Site Map</a></li>
+            <li><a class="nav-item" href="quiz.html">Quiz</a></li>
+            <li><a class="nav-item" href="studentdetails.html">Student Details</a></li>
+          </ul>      
+      </div> 
+    </nav>
+    <div class ="text-box">
+        <h1>Thumbnail images</h1>
+        <p>A thumbnail image page for the website </p>
+      
+  
+  </div>   
+  </section>
+        
+<!--------------Images---------------->  
+
+        <div class="imagezoom">
+            <div class="thmage">
+               
+               <h3>Some images for you to see.</h3>
+            </div>   
+            <br>
+            <br>
+
+            <div class="container">
+                <div class="image">
+                    <img onmouseover="bigImg(this)" onmouseout="normalImg(this)" src="beach.jpg" alt="beach" width="300" height="200">
+                </div>
+                <div class="text">    
+                    <p class="textforimage">Beach image number 1.</p>
+                </div>    
+            </div>
+            <div class="container">
+                <div class="image">
+                    <img onmouseover="bigImg(this)" onmouseout="normalImg(this)" src="beach2.jpg" alt="beach" width="300" height="200">
+                </div>
+                <div class="text">    
+                    <p class="textforimage">Beach image number 2.</p>
+                </div>    
+            </div>
+            <div class="container">
+                <div class="image">
+                    <img onmouseover="bigImg(this)" onmouseout="normalImg(this)" src="beach3.jpg" alt="beach" width="300" height="200">
+                </div>
+                <div class="text">     
+                    <p class="textforimage">Beach image number 3.</p>
+                </div>    
+            </div>
+            <div class="container">
+                <div class="image">
+                    <img onmouseover="bigImg(this)" onmouseout="normalImg(this)" src="beach4.jpg" alt="beach" width="300" height="200">
+                </div>
+                <div class="text">     
+                    <p class="textforimage">Beach image number 4.</p>
+                </div>    
+            </div>
+            <div class="container">
+                <div class="image">
+                    <img onmouseover="bigImg(this)" onmouseout="normalImg(this)" src="beach5.jpg" alt="beach" width="300" height="200">
+                </div>
+                <div class="text">     
+                    <p class="textforimage">Beach image number 5.</p>
+                </div>    
+            </div>  
+
+            <script>
+            function bigImg(x) {
+            x.style.height = "500px";
+            x.style.width = "700px";
+            }
+
+            function normalImg(x) {
+            x.style.height = "200px";
+            x.style.width = "300px";
+            }
+            </script>
+        </div>
+
+<!--------------Dropdown Menus---------------->       
+
+    <div class="dropdown">
+        <h2>Dropdown menus</h2>
+        <section>
+        <div class="bcolor">
+            <div class="menu1">
+                <h5>Background color</h5>
+                <p>Click on this menu to change the <strong>background color</strong> as you prefer.</p>
+                <div class="menu3">
+                    <select name="colors" onchange="changeColor(this)">
+                        <option value="white">White</option>
+                        <option value="gainsboro">Pale purple</option>
+                        <option value="MistyRose">Pale Rose</option>
+                        <option value="SlateGray">Slate Gray</option>
+                        <option value="LimeGreen">Lime Green</option>
+                    </select>
+                </div>
+            </div>  
+
+        <script>
+        function changeColor(event)
+        {
+            var color = event.value;
+            document.getElementsByTagName('BODY')[0].style.backgroundColor=color;
+        }
+        </script>
+        </div>
+        </section>
+
+        <section>
+
+            <div class="bcolor">
+                <div class="menu2">
+                    <h5>Text color</h5>
+                    <p>Click on this menu to change the <strong>text color</strong> as you prefer.</p>
+                    <div class="menu4">
+                        <select name="colors" onchange="changetextColor(this)">
+                            <option value="black">Black</option>
+                            <option value="red">Red</option>
+                            <option value="blue">Blue</option>
+                            <option value="yellow">Yellow</option>
+                            <option value="green">Green</option> 
+                        </select>
+                        <br>
+                    </div>
+                </div>
+            <script>
+            function changetextColor(event)
+            {
+                var color = event.value;
+                document.getElementsByTagName('BODY')[0].style.color=color;
+            }
+            </script>
+            </div>
+        </section>
+    </div>    
+                        
+<!--------------Footer----------------> 
+ 
+<div class="pg">
+    <div class="pg-editor">
+    <button class="pgEditor-btn" onclick="window.location.href='./editori.html';">Page Editor</button>
+    </div>
+</div>
+
+
+    
+
+</body>
+</html>     
+
+       

@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="ProductPage.css">
+    <link rel="stylesheet" href="indexV2.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;600;700&display=swap" rel="stylesheet">
+    <script src="Index.js"></script>
+    <title>Buy Products</title>
+</head>
+
+<body>
+    <nav>
+        <a href="Homepage.html"><img src="logo.png" alt=""></a>
+        <div class="nav-links">
+            <ul id="nav">
+                <li><a class="nav-item " href="Homepage.html">Home</a></li>
+                <li><a class="nav-item" href="PresentationPage.html">Presentation Page</a></li>
+                <li><a class="nav-item" href="">Query Form</a></li>
+                <li><a class="nav-item active" href="ProductPage.html">Products</a></li>
+                <li><a class="nav-item" href="Images.html">Thumbnail Images</a></li>
+                <li><a class="nav-item" href="svg.html">Site Map</a></li>
+                <li><a class="nav-item" href="quiz.html">Quiz</a></li>
+                <li><a class="nav-item" href="studentdetails.html">Student Details</a></li>
+            </ul>      
+        </div> 
+    </nav>
+
+
+
+    <div class="Container">
+        
+        <h1><span id="CatHead">Visit Sri Lanka Products Range</span></h1>
+
+        <div class="Product" id="Product1">
+            <img src="WT1.jpeg" alt="Product1">
+            <div class="Description">
+                <h3><span id="slot1"> Beach Classic</span></h3>
+            </div>
+            <div class="Price"><span id="price1"> Rs.2500.00</span></div>
+        </div>
+
+
+        <div class="Product" id="Product2">
+            <img src="WT2.jpeg" alt="Product2">
+            <div class="Description">
+                <h3><span id="slot2">Beach Urban</span></h3>
+            </div>
+            <div class="Price"><span id="price2">Rs.1500.00</span></div>
+
+        </div>
+
+
+        <div class="Product" id="Product3">
+            <img src="WT3.jpg" alt="Product3">
+            <div class="Description">
+                <h3><span id="slot3">Beach Stylish</span></h3>
+            </div>
+            <div class="Price"><span id="price3">Rs.1700.00</span></div>
+        </div>
+
+
+        <div class="Product" id="Product4">
+            <img src="WT4.jpg" alt="Product4">
+            <div class="Description">
+                <h3><span id="slot4">Beach Wild</span></h3>
+            </div>
+            <div class="Price"><span id="price4">Rs.2000.00</span></div>
+        </div><br>
+    </div><br>
+
+
+
+    <div class="selectOptions">
+
+        <form name="order" id="order" onReset="resetOrder()">
+
+            <!--PRODUCT CATEGORIES (SELECT MENU)-->
+
+            <label for="chooseItem">Categories :</label>
+            <select name="chooseItem" id="chooseItem" onchange="CheckOptions(this.form);">
+                <option value="selec" selected>Please Select</option>
+                <option value="T-Shirts">T-Shirts</option>
+                <option value="Dresses">Dresses</option>
+                <option value="Backpacks">Backpacks</option>
+                <option value="Duffle Bags">Duffle Bags</option>
+            </select><br>
+
+            Choose Here :
+            
+            <input type="radio" name="size" value="Beach Classic" id="size1"> <span id="variant1">Classic</span>
+            <input type="radio" name="size" value="Beach Urban" id="size2"> <span id="variant2">Beach Urban</span> 
+            <input type="radio" name="size" value="Beach Stylish" id="size3"> <span id="variant3">Beach Stylish</span> 
+            <input type="radio" name="size" value="Beach Wild" id="size4"> <span id="variant4">Beach Wild</span><br>
+
+            <label for="quantity">Quantity :</label>
+            <input type="number" name="Pieces" id="quantity" value="0" min="0" max="10">
+           
+            <input type="button" value="Add to cart" id="cartButton"><br>
+
+            Quantity : <span id="QuanTot"></span><br>
+
+            <!--CUSTOMER INFO FIELD-->
+            
+            <label for="customerName">Name :</label>
+            <input type="text" name="Name" id="customerName" placeholder="Your Name"><br>
+            <label for="customerEmail">Emai:</label>
+            <input type="email" name="Email" id="customerEmail" placeholder="Enter Email" class=""><br>
+
+            <!--SUBMIT & RESET BUTTONS-->
+
+            <input type="button" value="Place Order" id="subButton" >
+            <input type="reset" value="Reset" id="resetButton"><br>
+        
+
+        
+        </form>
+
+    </div>
+   
+    <div class="pg">
+        <div class="pg-editor">
+        <button class="pgEditor-btn" onclick="window.location.href='PageEditer.html';">Page Editor</button>
+        </div>
+    </div>
+
+
+    <script>
+        
+
+
+
+        const submitbtn = document.getElementById('subButton')
+        const customerName = document.getElementById('customerName')
+        const email = document.getElementById('customerEmail')
+        const item = document.getElementById('chooseItem')
+
+
+        const quantity = document.getElementById("quantity")
+        var button = document.getElementById("cartButton")
+        let tot = parseInt(0);
+
+        button.addEventListener("click", (e) =>{
+            tot = tot+parseInt(quantity.value);
+            document.getElementById("QuanTot").innerHTML=tot;
+        })
+
+        submitbtn.addEventListener('click', (e) =>{
+            let alertMessages = []
+            if (customerName.value === '' || customerName.value == null){
+                customerName.classList.add('errorinput')
+                alertMessages.push('Name is required')
+            }
+            if (email.value === '' || email.value == null){
+                email.classList.add('errorinput')
+                alertMessages.push('E-mail is required')
+            }
+            if (tot == 0){
+                quantity.classList.add('errorinput')
+                alertMessages.push('Select a quantity')
+            }
+            if (item.value == 'selec'){
+                item.classList.add('errorinput')
+                alertMessages.push('Select a Category')
+            }
+
+            if (alertMessages.length > 0 ){
+                alert(alertMessages.join(', '))
+            }
+        })
+
+        
+        
+
+        /*function getRadioValue (radioArray){
+            var i;
+            for(i=0; i<radioArray.length;i++){
+                if (radioArray[i].checked){
+                    return radioArray[i].value;
+                }
+            }
+            return "'"
+
+            if(i==1){
+                button.addEventListener("click", (e) =>{
+                    document.getElementById("selection").innerHTML="Ts1";
+
+                })
+            }
+        }*/
+       
+        //ITEM NAME DEFINES:
+
+        var Ts1="Beach Classic"; var Ts2="Beach Urban"; var Ts3="Beach Stylish"; var Ts4="Beach Wild";
+        var Bp1="Space Foxes";var Bp2="Lost Soul";var Bp3="Fire Sign Astrology";var Bp4="HKS Retro";
+        var D1="Sri Lanka surf";var D2="Dreaming of Sri Lanka";var D3="SL surfing beach A-Line";var D4="Hello Sri Lanka!";
+        var Db1="Happy Floral ";var Db2="Pencil Pattern";var Db3="80s Pop Retro Pattern";var Db4="Dog Pattern";
+        
+        //ITEM PRICE DEFINES:
+
+        var Trs1="Rs.2500.00";var Trs2="Rs.1500.00";var Trs3="Rs.1700.00";var Trs4="Rs.2000.00";
+        var Brs1="Rs.2500.00";var Brs2="Rs.2000.00";var Brs3="Rs.2300.00";var Brs4="Rs.2800.00";
+        var Drs1="Rs.2800.00";var Drs2="Rs.2500.00";var Drs3="Rs.2000.00";var Drs4="Rs.2300.00";
+        var Dbrs1="Rs.2000.00";var Dbrs2="Rs.2400.00";var Dbrs3="Rs.2000.00";var Dbrs4="Rs.2100.00";
+
+        function getSelectedValue(selectList){
+            return selectList[selectList.selectedIndex].value;
+        }
+
+        function CheckOptions(formData){
+            var selectOption = getSelectedValue(formData.chooseItem);
+
+            if(selectOption=="T-Shirts"){
+                document.getElementById("CatHead").innerHTML="T-Shirts";
+                
+                document.getElementById("variant1").innerHTML=Ts1;
+                document.getElementById("variant2").innerHTML=Ts2;
+                document.getElementById("variant3").innerHTML=Ts3;
+                document.getElementById("variant4").innerHTML=Ts4;
+
+                document.images[1].src="WT1.jpeg";
+                document.getElementById("slot1").innerHTML=Ts1;
+                document.images[2].src="WT2.jpeg";
+                document.getElementById("slot2").innerHTML=Ts2;
+                document.images[3].src="WT3.jpg";
+                document.getElementById("slot3").innerHTML=Ts3;
+                document.images[4].src="WT4.jpg";
+                document.getElementById("slot4").innerHTML=Ts4;
+
+                document.getElementById("price1").innerHTML=Trs;
+                document.getElementById("price2").innerHTML=Trs;
+                document.getElementById("price3").innerHTML=Trs;
+                document.getElementById("price4").innerHTML=Trs;
+
+            }
+
+            if(selectOption=="Backpacks"){
+                document.getElementById("CatHead").innerHTML="Backpacks";
+
+                document.getElementById("variant1").innerHTML=Bp1;
+                document.getElementById("variant2").innerHTML=Bp2;
+                document.getElementById("variant3").innerHTML=Bp3;
+                document.getElementById("variant4").innerHTML=Bp4;
+
+                document.images[1].src="B1.jpeg";
+                document.getElementById("slot1").innerHTML=Bp1;
+                document.images[2].src="B2.jpeg";
+                document.getElementById("slot2").innerHTML=Bp2;
+                document.images[3].src="B3.jpeg";
+                document.getElementById("slot3").innerHTML=Bp3;
+                document.images[4].src="B4.jpeg";
+                document.getElementById("slot4").innerHTML=Bp4;
+
+                document.getElementById("price1").innerHTML=Brs1;
+                document.getElementById("price2").innerHTML=Brs2;
+                document.getElementById("price3").innerHTML=Brs3;
+                document.getElementById("price4").innerHTML=Brs4;
+
+            }
+
+            else if(selectOption=="Dresses"){
+                document.getElementById("CatHead").innerHTML="Dresses";
+
+                document.getElementById("variant1").innerHTML=D1;
+                document.getElementById("variant2").innerHTML=D2;
+                document.getElementById("variant3").innerHTML=D3;
+                document.getElementById("variant4").innerHTML=D4;
+
+                document.images[1].src="D1.jpeg";
+                document.getElementById("slot1").innerHTML=D1;
+                document.images[2].src="D2.jpeg";
+                document.getElementById("slot2").innerHTML=D2;
+                document.images[3].src="D3.jpeg";
+                document.getElementById("slot3").innerHTML=D3;
+                document.images[4].src="D4.jpeg";
+                document.getElementById("slot4").innerHTML=D4;
+
+                document.getElementById("price1").innerHTML=Drs1;
+                document.getElementById("price2").innerHTML=Drs2;
+                document.getElementById("price3").innerHTML=Drs3;
+                document.getElementById("price4").innerHTML=Drs4;
+
+            }
+
+            else if(selectOption=="Duffle Bags"){
+                document.getElementById("CatHead").innerHTML="Duffle Bags";
+
+                document.getElementById("variant1").innerHTML=Db1;
+                document.getElementById("variant2").innerHTML=Db2;
+                document.getElementById("variant3").innerHTML=Db3;
+                document.getElementById("variant4").innerHTML=Db4;
+
+                document.images[1].src="DB1.jpeg";
+                document.getElementById("slot1").innerHTML=Db1;
+                document.images[2].src="DB2.jpeg";
+                document.getElementById("slot2").innerHTML=Db2;
+                document.images[3].src="DB3.jpeg";
+                document.getElementById("slot3").innerHTML=Db3;
+                document.images[4].src="DB4.jpeg";
+                document.getElementById("slot4").innerHTML=Db4;
+
+                document.getElementById("price1").innerHTML=Dbrs1;
+                document.getElementById("price2").innerHTML=Dbrs2;
+                document.getElementById("price3").innerHTML=Dbrs3;
+                document.getElementById("price4").innerHTML=Dbrs4;
+
+            }
+        }
+
+        //RESET BUTTON FUNCTION
+        
+        function resetOrder(){
+                document.getElementById("CatHead").innerHTML="Visit Sri Lanka Shopping Range";
+
+                document.getElementById("variant1").innerHTML=Ts1;
+                document.getElementById("variant2").innerHTML=Ts2;
+                document.getElementById("variant3").innerHTML=Ts3;
+                document.getElementById("variant4").innerHTML=Ts4;
+
+                document.images[1].src="WT1.jpeg";
+                document.getElementById("slot1").innerHTML=Ts1;
+                document.images[2].src="WT2.jpeg";
+                document.getElementById("slot2").innerHTML=Ts2;
+                document.images[3].src="WT3.jpg";
+                document.getElementById("slot3").innerHTML=Ts3;
+                document.images[4].src="WT4.jpg";
+                document.getElementById("slot4").innerHTML=Ts4;
+
+                document.getElementById("price1").innerHTML=Trs1;
+                document.getElementById("price2").innerHTML=Trs2;
+                document.getElementById("price3").innerHTML=Trs3;
+                document.getElementById("price4").innerHTML=Trs4;
+
+                customerName.classList.remove('errorinput')
+                email.classList.remove('errorinput')
+                item.classList.remove('errorinput')
+                quantity.classList.remove('errorinput')
+
+                tot = 0;
+
+                document.getElementById('QuanTot').innerHTML = tot;
+
+            }
+
+        
+    </script>
+    
+    
+</body>
+</html>

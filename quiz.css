@@ -1,0 +1,35 @@
+.header{
+	padding-top: 100px;
+	background-color:#22EBF3;
+	font-weight:bold;
+	color:white;
+	border-radius:10px;
+	text-align:center;
+	padding: 1 0 1 0;
+}
+
+.header h1, .results{
+	margin-top: 20%;
+}
+
+.body{
+	text-align:center;
+	border-style:solid;
+	border: 3 3 3 3;
+	border-radius: 10px;
+	margin-top: 5px;
+}
+
+.question {
+		
+		text-align:center;
+		border-style:solid;
+		border: 3 3 3 3;
+		border-radius: 10px;
+		margin-top: 5px;
+		margin-left:15%;
+		margin-right:15%;
+		margin-bottom:5px;
+		padding-bottom:5px;
+}
+

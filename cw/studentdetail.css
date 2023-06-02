@@ -1,0 +1,99 @@
+		*{
+			font-family: 'Poppins', sans-serif;
+		}
+		body{
+			background-color: #4c7e80;
+		}
+		.cards{
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			height: 100vh;
+		}
+		
+		.container{
+			margin-top: 10%;
+			display: flex;
+				}
+		
+		.profile{
+				position:relative;
+				width:60px;
+				margin:0 1em;
+				height: 60px;
+				border-radius:20%;
+				background-image: url("./images/image0.jpg");
+				background-repeat: no-repeat;
+				background-size: cover;
+				background-position: center;
+				cursor: pointer;
+				box-shadow: 0 0 0 4px red, 0 0 0 6px blue;
+				transition: 0.2s;
+				}
+		
+		.profile:hover{
+						box-shadow: 0 0 0 4px #fff, 0 0 0 6px #d10fd8;
+						}
+						
+		
+			
+		.content{
+				position:absolute;
+				bottom:75px;
+				padding:20px;
+				min-width: 400px;
+				background-color: white;
+				border: 1px solid black;
+				border-radius:10px;
+				visibility:hidden;
+				opacity:1;
+				transform: translateY(-10px);
+				transition: 0.5s;
+				}
+		
+		
+		
+		.content .Sheader{
+						display:flex;
+						align-items:center;
+						}
+		
+		.content .Sheader img{
+							
+							grid-column: 1/2;
+							width: 80px;
+							height: 80px;
+							border-radius: 50%;
+							object-fit: cover;
+							}
+		
+		.content .Sheader .info{
+							margin-left: 1em;
+							}
+		
+		.content .Sheader .info .name{
+									font-size: 1.25em;
+									color: #333;							
+									font-size:60;
+									}
+							
+		.content .Sheader .info .title{
+									font-size: 1.5em;
+									color: gray;
+									font-weight:bold;
+									}
+						
+		.content .body{
+						padding:1em;
+						}
+						
+		.content .body p{
+						font-size:1em;
+						color:black;
+						}
+		
+		.profile:hover .content{
+								visibility: visible;
+								opacity:1;
+								transform: translateX(-15%) translateY(0px);
+								}

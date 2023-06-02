@@ -1,0 +1,45 @@
+body{
+    font-family: 'Poppins', sans-serif;
+
+}
+
+h1{
+    text-align: center;
+    color: black;
+    margin-bottom: -30px;
+}
+
+h2{
+    text-align: center;
+    color: white;
+    margin-bottom: -15px;
+}
+
+h3{
+    text-align: center;
+    color: red;
+    margin-bottom: -15px;
+    margin-bottom: 5px;
+    background-color: white;
+}
+
+div{
+    background-color: #ABB2B9 ;
+    border: solid 5px;
+    border-radius:13px;
+    font-size:18px;
+    padding:30px;
+    width:490px;
+    line-height:1.8;
+    margin: auto;
+    text-align: center;
+}
+
+#btn{
+    margin-top: 20px;
+    padding: 10px;
+    color: white;
+    background-color: black;
+    border-width: 5px;
+    font-size: large;
+}

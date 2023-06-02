@@ -1,0 +1,124 @@
+<!doctype html>
+<html>
+<head>
+	<title>Quiz</title>
+	<link rel="stylesheet" href="quiz.css">
+	<link rel="stylesheet" href="index.css">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;600;700&display=swap" rel="stylesheet">
+	<script src="quiz.js"></script>	 
+	<script src="index.js"></script>
+</head>
+	<body>	
+		<nav>
+        <a href="Homepage.html"><img src="C:\IIT\1 st Year\2nd semster\Web design and development\cw w1867659\img\logo.png" alt=""></a>
+        <div class="nav-links">
+            <ul id="nav">
+                <li><a class="nav-item " href="">Home</a></li>
+                <li><a class="nav-item" href="">Presentation Page</a></li>
+                <li><a class="nav-item" href="">Query Form</a></li>
+                <li><a class="nav-item" href="">Products</a></li>
+                <li><a class="nav-item active" href="quiz.html">Quiz</a></li>
+				<li><a class="nav-item" href="">Thumbnail Images</a></li>
+                <li><a class="nav-item" href="">Site Map</a></li>
+                <li><a class="nav-item" href="studentdetails.html">Student Details</a></li>
+            </ul>      
+        </div> 
+		</nav>
+		
+		<div class="header">
+			<h1>Quiz</h1>
+			<div id="results">
+				<h2>Your Score: Not yet Attempted</h2>
+				<text>Time: <text id="time">60</text></text>
+			</div>
+		</div>
+		
+		
+		
+		<div class="body">
+			<form name="quiz" id="quiz" onsubmit="onSubmit()">
+				<div class="question">
+					<p><strong>1. Which time is best to visit Sri Lanka?</strong></p>
+					<input type="radio" name="time" value="dec">December to January<br>
+					<input type="radio" name="time" value="mar">March to April<br>
+					<input type="radio" name="time" value="jul">July to September<br>
+					<input type="radio" name="time" value="any">Any time throughout the year
+				</div>
+				<div class="question">
+					<p><strong>2. What is the name of the currency used in Sri Lanka?</strong></p>
+					<input type="radio" name="currency" value="usd">USD<br>
+					<input type="radio" name="currency" value="euro">EURO<br>
+					<input type="radio" name="currency" value="rupee">Rupee<br>
+					<input type="radio" name="currency" value="cent">Cents
+				</div>
+				<div class="question">	
+					<p><strong>3. What is the capital of Sri Lanka?</strong></p>
+					<input type="radio" name="capital" value="colombo">Colombo<br>
+					<input type="radio" name="capital" value="kandy">Kandy<br>
+					<input type="radio" name="capital" value="polonnaruwa">Polonnaruwa<br>
+					<input type="radio" name="capital" value="galle">Galle
+				</div>
+				<div class="question">	
+					<p><strong>4. What is the Sri Lanka international dialing code?</strong></p>
+					<input type="radio" name="dial" value="first">+91<br>
+					<input type="radio" name="dial" value="second">+94<br>
+					<input type="radio" name="dial" value="third">+63<br>
+					<input type="radio" name="dial" value="forth">+97
+				</div>
+				<div class="question">	
+					<p><strong>5. What language is mostly used in Sri Lanka?</strong></p>
+					<input type="radio" name="language" value="sin">Sinhala<br>
+					<input type="radio" name="language" value="tam">Tamil<br>
+					<input type="radio" name="language" value="eng">English<br>
+					<input type="radio" name="language" value="hin">Hindi
+				</div>
+				<div class="question">	
+					<p><strong>6. What is the major religion in Sri Lanka?</strong></p>
+					<input type="radio" name="religion" value="mus">Muslim<br>
+					<input type="radio" name="religion" value="cat">Catholic<br>
+					<input type="radio" name="religion" value="hind">Hindu<br>
+					<input type="radio" name="religion" value="budd">Buddhism
+				</div>
+				<div class="question">	
+					<p><strong>7. Where does the national zoo in Sri Lanka located?</strong></p>
+					<input type="radio" name="zoo" value="hab">Habarana<br>
+					<input type="radio" name="zoo" value="ham">Hambanthota<br>
+					<input type="radio" name="zoo" value="deh">Dehiwala<br>
+					<input type="radio" name="zoo" value="pin">Pinnawala
+				</div>
+				<div class="question">	
+					<p><strong>8. What is considered as the 8th wonder of the world?</strong></p>
+					<input type="radio" name="wonder" value="sig">Sigiriya<br>
+					<input type="radio" name="wonder" value="ell">Ella rock<br>
+					<input type="radio" name="wonder" value="tem">Temple of tooth<br>
+					<input type="radio" name="wonder" value="sinha">Sinharaja forest
+				</div>
+				<div class="question">	
+					<p><strong>9. What is the largest forest in Sri Lanka?</strong></p>
+					<input type="radio" name="forest" value="will">Willpaththu forest<br>
+					<input type="radio" name="forest" value="kann">Kanneliya rain forest<br>
+					<input type="radio" name="forest" value="sinharaja">Sinharaja forest<br>
+					<input type="radio" name="forest" value="yala">Yala national park
+				</div>
+				<div class="question">	
+					<p><strong>10. What is the main meal of Sri Lanka?</strong></p>
+					<input type="radio" name="meal" value="kottu">Kottu<br>
+					<input type="radio" name="meal" value="rice">Rice<br>
+					<input type="radio" name="meal" value="noodles">Noodles<br>
+					<input type="radio" name="meal" value="pasta">Pasta<br>
+				</div>
+				<button type="submit">Submit Answers</button>
+		
+			</form>	
+		</div>
+
+			<div class="pg">
+				<div class="pg-editor">
+				<button class="pgEditor-btn" onclick="window.location.href='./page editor.html';">Page Editor</button>
+				</div>
+			</div>
+	</body>
+	
+</html>
